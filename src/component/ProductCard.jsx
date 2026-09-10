@@ -14,7 +14,7 @@ function ProductCard({ product }) {
       <div className="product-image-container">
         <img
           src={product.image}
-          alt={product.title}
+          alt={product.name}
           className="product-image"
         />
       </div>
@@ -22,15 +22,16 @@ function ProductCard({ product }) {
       {/* Product Information */}
       <div className="product-info">
 
-        <h3>{product.title}</h3>
+        <h3>{product.name}</h3>
 
         <div className="product-rating">
-          <span className="stars">★★★★★</span>
-          <span className="reviews">37</span>
+          <img className="product-rating-stars"
+            src={`images/ratings/rating-${product.rating.stars * 10}.png`} />
+          <span className="reviews">{product.rating.count}</span>
         </div>
 
         <p className="product-price">
-          ${product.price}
+          ${product.priceCents / 100}
         </p>
 
         {/* Quantity */}

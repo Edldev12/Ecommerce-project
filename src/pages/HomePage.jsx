@@ -4,7 +4,7 @@ import ProductCard from "../component/ProductCard";
 function HomePage({ searchQuery }) {
 
   const filteredProducts = products.filter((product) =>
-    product.title
+    product.name
       .toLowerCase()
       .includes(searchQuery.toLowerCase())
   );
