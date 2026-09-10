@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCart } from "../contaxt/useCart";
+import { useCart } from "../hook/useCart";
 import { Link } from "react-router-dom";
 import "./Header.css";
 

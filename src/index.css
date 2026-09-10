@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+
+/* PRODUCTS */
+
+.products-container {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.products-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+}
+
+.product-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 650px;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  flex-direction: column;
+}
