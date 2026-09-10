@@ -93,6 +93,7 @@
   padding: 10px 15px;
   text-decoration: none;
   gap: 5px;
+  font-weight: bold;
 }
 
 .header-link:hover {
