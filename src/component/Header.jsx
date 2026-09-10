@@ -60,6 +60,9 @@ function Header({ onSearch }) {
               <div className="cart-text">Cart</div>
             </div>
           </Link>
+          <Link to="/contact" className="header-link">
+            Contact
+          </Link>
         </div>
       </div>
     </header>

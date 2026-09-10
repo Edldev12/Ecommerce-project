@@ -17,6 +17,7 @@
   left: 0;
   display: flex;
   align-items: center;
+  gap: 20px;
 
 }
 
@@ -32,12 +33,14 @@
 }
 
 .middle-section {
-  width: 55%;
+  width: 60%;
   height: 35px;
   border-radius: 6px;
+  border: 1px solid #d1d5db;
   display: flex;
   text-align: center;
   background-color: #f8f8f8;
+  overflow: hidden;
 }
 
 .middle-section input {
@@ -74,23 +77,26 @@
 }
 
 .right-section {
-  width: 20%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .header-link {
   border-radius: 6px;
-  background: var(--social-bg);
   color: #f8f8f8;
   display: flex;
   align-items: center;
-  padding-left: 30px;
-  padding-right: 20px;
+  padding: 10px 15px;
   text-decoration: none;
   gap: 5px;
+}
+
+.header-link:hover {
+  background: var(--social-bg);
 }
 
 .cart-wrapper {
