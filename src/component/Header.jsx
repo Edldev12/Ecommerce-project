@@ -3,10 +3,14 @@ import { useCart } from "../hook/useCart";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
-function Header() {
+function Header({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState("");
   const { cartQuantity } = useCart();
-
+  const handleSearch = (e) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+    onSearch(value);
+  };
   return (
     <header>
       <div className="header">
@@ -21,7 +25,7 @@ function Header() {
             type="text"
             placeholder="Search products..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={handleSearch}
           />
 
           <button>

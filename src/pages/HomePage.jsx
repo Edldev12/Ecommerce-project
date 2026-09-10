@@ -1,19 +1,34 @@
 import products from "../data/products";
 import ProductCard from "../component/ProductCard";
 
-function HomePage() {
+function HomePage({ searchQuery }) {
+
+  const filteredProducts = products.filter((product) =>
+    product.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase())
+  );
+
   return (
     <main className="products-container">
+
       <h1>Our Products</h1>
 
       <div className="product-grid">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-          />
-        ))}
+
+        {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+            />
+          ))
+        ) : (
+          <p>No products found.</p>
+        )}
+
       </div>
+
     </main>
   );
 }
