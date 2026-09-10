@@ -18,7 +18,12 @@ function Cart() {
         <h2>Your Cart</h2>
 
         {cart.length === 0 ? (
-          <p className="empty-cart">Your cart is empty.</p>
+          <p className="empty-cart">
+            Your cart is empty.
+            <div>
+              <button className="back-to-home" onClick={() => navigate("/")}>View products </button>
+            </div>
+          </p>
         ) : (
           <>
             {cart.map((item) => (

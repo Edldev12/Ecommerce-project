@@ -20,6 +20,13 @@
   color: #111827;
 }
 
+.back-to-home {
+  background: #1c7c27;
+  padding: 8px;
+  margin-top: 20px;
+
+}
+
 .cart-item {
   display: flex;
   gap: 25px;
