@@ -2,7 +2,7 @@
 
 A modern and responsive Ecommerce website built with **React.js** and **Vite**.
 The application allows users to browse products, search for products, manage their cart, checkout, and view or reorder previous orders.
-
+ ``` this is educational project ```
 ## 🚀 Features
 
 * 🏠 Home page with product listing
@@ -39,24 +39,31 @@ The application allows users to browse products, search for products, manage the
 src/
 ├── component/
 │   ├── Cart.jsx
+│   ├── Cart.css
 │   ├── Checkout.jsx
+│   ├── Checkout.css
 │   ├── Header.jsx
-│   └── ProductCard.jsx
+│   ├── Header.css
+│   ├── ProductCard.jsx
+│   └── ProductCard.css
 │
 ├── contaxt/
 │   ├── CartContext.jsx
 │   └── CartProvider.jsx
 │
 ├── data/
-│   └── products/
+│   └── products.js/
 │
 ├── hook/
 │   └── useCart.js
 │
 ├── pages/
 │   ├── HomePage.jsx
+│   ├── HomePage.css
 │   ├── CheckoutPage.jsx
 │   ├── OrdersPage.jsx
+│   ├── OrdersPage.css
+│   ├── ContactPage.css
 │   └── ContactPage.jsx
 │
 ├── App.jsx
