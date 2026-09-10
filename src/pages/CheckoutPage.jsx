@@ -1,22 +1,18 @@
-import { useState } from "react";
+import { useCart } from "../hook/useCart";
 import Checkout from "../component/Checkout";
 
 function CheckoutPage() {
-  const [showCheckout, setShowCheckout] = useState(true);
+  const { cart, cartTotal } = useCart();
 
-  const handleClose = () => {
-    setShowCheckout(false);
-  };
-
-  if (!showCheckout) {
-    return <h1>Checkout closed</h1>;
-  }
+  const tax = cartTotal * 0.15;
+  const delivery = cartTotal > 0 ? 5 : 0;
+  const orderTotal = cartTotal + tax + delivery;
 
   return (
     <Checkout
-      cart={[]}
-      total={0}
-      onClose={handleClose}
+      cart={cart}
+      total={orderTotal}
+      onClose={() => window.history.back()}
     />
   );
 }

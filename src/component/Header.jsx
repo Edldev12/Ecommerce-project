@@ -38,7 +38,7 @@ function Header() {
             Orders
           </Link>
 
-          <Link to="/checkout" className="header-link">
+          <Link to="/cart" className="header-link">
             <div className="cart-wrapper">
               <img
                 src="/images/cart-icon.png"

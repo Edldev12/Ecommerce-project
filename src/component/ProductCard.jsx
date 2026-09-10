@@ -1,5 +1,12 @@
+import { useState } from "react";
+import { useCart } from "../hook/useCart";
 import './ProductCard.css';
 function ProductCard({ product }) {
+  const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
+  const handleAddToCart = () => {
+    addToCart(product, quantity);
+  };
   return (
     <div className="product-card">
 
@@ -27,7 +34,9 @@ function ProductCard({ product }) {
         </p>
 
         {/* Quantity */}
-        <select className="quantity">
+        <select className="quantity"
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -36,7 +45,10 @@ function ProductCard({ product }) {
         </select>
 
         {/* Add to Cart */}
-        <button className="add-to-cart">
+        <button
+          className="add-to-cart"
+          onClick={handleAddToCart}
+        >
           Add to Cart
         </button>
 
