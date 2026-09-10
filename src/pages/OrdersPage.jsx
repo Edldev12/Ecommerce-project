@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { useCart } from "../hook/useCart";
+import { useNavigate } from "react-router-dom";
 import "./OrdersPage.css";
 
 function OrdersPage() {
   const [orders] = useState(() => {
     return JSON.parse(localStorage.getItem("orders")) || [];
   });
+  const navigate = useNavigate();
+  const { reorder } = useCart();
   return (
     <main className="orders-page">
       <h1>My Orders</h1>
@@ -73,7 +77,15 @@ function OrdersPage() {
                   ${order.total.toFixed(2)}
                 </strong>
               </div>
-
+              <button
+                className="reorder-button"
+                onClick={() => {
+                  reorder(order.items);
+                  navigate("/cart");
+                }}
+              >
+                Reorder
+              </button>
             </div>
           ))}
         </div>

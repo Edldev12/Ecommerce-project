@@ -123,6 +123,24 @@
   font-size: 18px;
 }
 
+.reorder-button {
+  display: block;
+  width: 200px;
+  margin: 20px auto 0;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0d4914;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reorder-button:hover {
+  background-color: #11651c;
+}
+
 @media (max-width: 600px) {
   .orders-page {
     padding: 90px 15px 30px;
