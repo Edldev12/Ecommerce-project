@@ -56,6 +56,9 @@ function Checkout({ cart, total, onClose }) {
       phone: "",
       address: "",
     });
+    setTimeout(() => {
+      onClose();
+    }, 1000);
   };
 
   return (

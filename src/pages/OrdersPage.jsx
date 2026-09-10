@@ -4,11 +4,23 @@ import { useNavigate } from "react-router-dom";
 import "./OrdersPage.css";
 
 function OrdersPage() {
-  const [orders] = useState(() => {
+  const [orders, setOrders] = useState(() => {
     return JSON.parse(localStorage.getItem("orders")) || [];
   });
   const navigate = useNavigate();
   const { reorder } = useCart();
+  const removeOrder = (orderId) => {
+    const updatedOrders = orders.filter(
+      (order) => order.id !== orderId
+    );
+
+    localStorage.setItem(
+      "orders",
+      JSON.stringify(updatedOrders)
+    );
+
+    setOrders(updatedOrders);
+  };
   return (
     <main className="orders-page">
       <h1>My Orders</h1>
@@ -77,15 +89,23 @@ function OrdersPage() {
                   ${order.total.toFixed(2)}
                 </strong>
               </div>
-              <button
-                className="reorder-button"
-                onClick={() => {
-                  reorder(order.items);
-                  navigate("/cart");
-                }}
-              >
-                Reorder
-              </button>
+              <div className="order-actions">
+                <button
+                  className="reorder-button"
+                  onClick={() => {
+                    reorder(order.items);
+                    navigate("/cart");
+                  }}
+                >
+                  Reorder
+                </button>
+                <button
+                  className="remove-order-button"
+                  onClick={() => removeOrder(order.id)}
+                >
+                  Remove Order
+                </button>
+              </div>
             </div>
           ))}
         </div>
