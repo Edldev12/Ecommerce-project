@@ -32,11 +32,22 @@ function Checkout({ cart, total, onClose }) {
       return;
     }
 
-    console.log("Order:", {
+    const newOrder = {
+      id: Date.now(),
       customer: formData,
       items: cart,
       total: total,
-    });
+      status: "Pending",
+      date: new Date().toLocaleString(),
+    };
+
+    const existingOrders =
+      JSON.parse(localStorage.getItem("orders")) || [];
+
+    localStorage.setItem(
+      "orders",
+      JSON.stringify([...existingOrders, newOrder])
+    );
 
     setMessage("Order placed successfully!");
 
