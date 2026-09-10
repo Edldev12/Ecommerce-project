@@ -1,23 +1,22 @@
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./component/Header";
+import HomePage from "./pages/HomePage";
+import CheckoutPage from "./pages/CheckoutPage";
+
 import { CartProvider } from "./contaxt/CartProvider";
-import products from "./data/products";
+
 import "./App.css";
-import ProductCard from "./component/ProductCard";
 
 function App() {
   return (
     <CartProvider>
       <Header />
-      <main className="products-container">
-        <h1>our Products</h1>
-        <div className="product-grid">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product} />
-          ))}
-        </div>
-      </main>
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+      </Routes>
     </CartProvider>
   );
 }

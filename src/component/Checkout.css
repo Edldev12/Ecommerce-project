@@ -1,0 +1,179 @@
+/* ========================================
+   CHECKOUT OVERLAY
+======================================== */
+
+.checkout-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2000;
+
+  padding: 20px;
+}
+
+
+/* ========================================
+   CHECKOUT BOX
+======================================== */
+
+.checkout {
+  width: 100%;
+  max-width: 500px;
+
+  background: white;
+  border-radius: 10px;
+
+  padding: 25px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.checkout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+.checkout-header h2 {
+  font-size: 26px;
+  color: #111827;
+}
+
+.close-checkout {
+  border: none;
+  background: none;
+
+  font-size: 30px;
+  color: #555;
+
+  cursor: pointer;
+}
+
+.close-checkout:hover {
+  color: #000;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.checkout form {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout label {
+  margin-bottom: 6px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.checkout input,
+.checkout textarea {
+  width: 100%;
+
+  padding: 11px 12px;
+
+  margin-bottom: 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+.checkout input:focus,
+.checkout textarea:focus {
+  border-color: #0d4914;
+}
+
+.checkout textarea {
+  resize: vertical;
+}
+
+
+/* ========================================
+   TOTAL
+======================================== */
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10px 0 20px;
+
+  padding: 15px 0;
+
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.checkout-total span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.checkout-total strong {
+  font-size: 22px;
+  color: #0d4914;
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.checkout-message {
+  margin-bottom: 15px;
+
+  text-align: center;
+
+  font-size: 14px;
+  color: #0d4914;
+}
+
+
+/* ========================================
+   PLACE ORDER
+======================================== */
+
+.place-order {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #0d4914;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.place-order:hover {
+  background: #11651c;
+}
